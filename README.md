@@ -1,4 +1,4 @@
-In this project, let's build a **Nxt Trendz - Cart Features**.
+In this project, let's build a **E-Commerce Website** using React .
 ### Set Up Instructions
 
 
