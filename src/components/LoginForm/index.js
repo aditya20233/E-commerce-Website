@@ -20,6 +20,15 @@ class LoginForm extends Component {
     this.setState({password: event.target.value})
   }
 
+  // Function to handle guest login redirection
+  onGuestLogin = event => {
+    event.preventDefault()
+    this.setState({username: 'rahul', password: 'rahul@2021'}, () => {
+      this.submitForm(event) // Ensure this is called after state update
+    })
+    console.log('Guest login initiated')
+  }
+
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
 
@@ -108,19 +117,28 @@ class LoginForm extends Component {
           className="login-image"
           alt="website login"
         />
-        <form className="form-container" onSubmit={this.submitForm}>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            className="login-website-logo-desktop-image"
-            alt="website logo"
-          />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
-          <button type="submit" className="login-button">
-            Login
+        <div>
+          <form className="form-container" onSubmit={this.submitForm}>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+              className="login-website-logo-desktop-image"
+              alt="website logo"
+            />
+            <div className="input-container">{this.renderUsernameField()}</div>
+            <div className="input-container">{this.renderPasswordField()}</div>
+            <button type="submit" className="login-button">
+              Login
+            </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          </form>
+          <button
+            type="button"
+            className="login-button"
+            onClick={this.onGuestLogin}
+          >
+            Guest Login
           </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>
+        </div>
       </div>
     )
   }

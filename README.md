@@ -1,6 +1,6 @@
 In this project, let's build a **E-Commerce Website** using React .
-### Set Up Instructions
 
+### Set Up Instructions
 
 - Download dependencies by running `npm install`
 - Start up the app using `npm start`
@@ -17,4 +17,3 @@ In this project, let's build a **E-Commerce Website** using React .
    username: raja
    password: raja@2021
   ```
-
