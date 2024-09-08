@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": "^10.13 || 12 || 14 || 15",
+    "node": "^10.13 || 12 || 14 || 15 || ^18.12",
     "npm": ">=6"
   },
   "dependencies": {
